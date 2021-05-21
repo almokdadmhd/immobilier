@@ -30,8 +30,7 @@ class ViewInscreption
 
           <input type="tel" name="tel" id="tel" value="<?php echo $formSubmit ?  $_POST['tel'] : '' ?>" class="form-control" aria-describedby="tel" placeholder="Tel" required>
         </div>
-
-        <button type="submit" name="ajout" class="btn btn-primary" >Ajouter</button>
+        <button type="submit" name="ajout" class="btn btn-primary">Ajouter</button>
         <button type="reset" name="annuler" class="btn btn-danger">Annuler</button>
 
         <div class="form-group">

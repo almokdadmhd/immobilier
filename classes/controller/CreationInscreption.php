@@ -19,18 +19,14 @@
   if (isset($_POST['ajout'])) {
     // generation de token avec la function mt_rand (11111,99999) 
     $dadta = $_POST["mail"];
-    if (ModelInscreption::mailPresent($_post["mail"])) {
-      ViewTemplate::alert("L'enregistrée avec succès", "success", "CreatioInscreption.php");
+    if (ModelInscreption::mailPresent($_POST["mail"])) {
+      ViewTemplate::alert("l'adress mail existe deja", "danger", "CreatioInscreption.php");
     } else {
-      $token = uniqueid(11111, 99999);
-      ModelInscreption::ajoutInscreption($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['pass'], $_POST['tel'], $toke);
+      $token = mt_rand(10000, 99999);
+      ModelInscreption::ajoutInscreption($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['pass'], $_POST['tel'], $token);
       viewTemplate::alert('inscreption a été bien', 'CreatioInscreption.php');
-      ViewInscreption::ajoutInscreption($toke, $_POST['mail']);
-      // chiffrement de mot de pass password_hash
-      $hash==password_hash($pass, PASSWORD_BCRYPT)
-      $data1 =connexion();
-      $requet =$data1->prepare("INSERT INTO user VALEU (null, :nom, :preonm, :mail, :pass, :tel, '0','0', '0','token' ")
-      $requet-> execute([':nom'=>$nom, ':preonm'=>$preonm,':mail'=>$mail,':pass'=>$pass,':tel'=>$tel, 0,0,0, ':token=>$token'])
+      ViewInscreption::ajoutInscreption($token, $_POST['mail']);
+      
 
     }
   } else {
