@@ -24,8 +24,7 @@
     } else {
       $token = mt_rand(10000, 99999);
       ModelInscreption::ajoutInscreption($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['pass'], $_POST['tel'], $token);
-      viewTemplate::alert('inscreption a été bien', 'CreatioInscreption.php');
-      ViewInscreption::ajoutInscreption($token, $_POST['mail']);
+      viewTemplate::alert('inscreption a été bien fait pour confirmer votre inscreption cliker ic' ,'success ', 'ConfirmationMail.php?mail=' . $_POST['mail'].'&token='.$token);
       
 
     }

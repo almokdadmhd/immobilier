@@ -16,4 +16,10 @@ class ModelInscreption
         $requt->execute([':mail' => $mail]);
         return $requt->fetch(PDO::FETCH_ASSOC);
     }
-}      
+    public static function confirmMail($mail,  $token)
+    {
+        $data = connexion();
+        $requt = $data->prepare("UPDATE user set confirme ='1', actif='1'  WHERE mail =:mail AND token=:token");
+        $requt->execute([':mail' => $mail, ':token' => $token]);
+    }
+}
