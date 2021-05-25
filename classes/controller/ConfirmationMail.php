@@ -17,7 +17,7 @@
     require_once "../model/Modelnscreption.php";
     ViewTemplate::menu();
     if (isset($_GET['mail']) && isset($_GET['token'])) {
-        ModelInscription::confirmMail($_GET['mail'], $_GET['token']);
+        ModelUser::confirmMail($_GET['mail'], $_GET['token']);
         ViewTemplate::alert("confirmation a été", "success", "CreatioInscription.php");
     } else {
         ViewTemplate::alert("confirmation impossible", "danger", "CreatioInscription.php");

@@ -12,31 +12,43 @@
 
 <body>
     <?php
-    require_once "../view/ViewConnexion.php";
+    require_once "../view/ViewUser.php";
     require_once "../view/ViewTemplate.php";
-    require_once "../model/MdelConnexion.php";
-    ViewTemplate::menu();
+    require_once "../model/ModelUser.php";
+    ViewUser::Connexion();
+
     if (isset($_POST['ajout'])) {
-        if (ModelConnexion::ajoutConnexion($_POST["mail"]) && ($_POST["pass"])) {
-            ViewTemplate::alert("la connexion est exiseste ", "danger", "CreationConnexion.php");
-        } else {
-            viewTemplate::alert('la connexion a été bien fait ', 'success ', 'CraetionInscription.php');
+        if (ModelUser::mailExistant($_POST["mail"]) && ($_POST["pass"])) {
+            ViewTemplate::alert("la connexion est correcte ", " success  ", "CreationConnexion.php");
         }
-    } else {
-        ModelConnexion::ajoutConnexion();
+        if (isset($_POST['ajout'])) {
+            ModelUser::confirmMail($_POST['mail'], $_POST['pass']);
+            ViewTemplate::alert("La connexion est correcte ", "success", "CreationConnexion.php");
+        } else {
+        }
     }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ViewTemplate::footer();
 
-    if(isset($_POST['deconnexion'])){
+    if (isset($_POST['deconnexion'])) {
         session_unset();
         session_destroy();
         header('location:Accueil.php');
-    }else{
-
+    } else {
     }
-     
-
     ?>
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/all.min.js"></script>
@@ -44,3 +56,6 @@
     <script src="../../js/ctrl.js"></script>
 
 
+</body>
+
+</html>

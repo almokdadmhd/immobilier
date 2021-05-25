@@ -1,15 +1,15 @@
 <?php
 require_once "connexion.php";
-class ModelInscription
+class ModelUser
 {
-    public static function ajoutInscription($nom, $prenom, $mail, $pass, $tel, $token)
+    public static function ajoutUser($nom, $prenom, $mail, $pass, $tel, $token)
     {
         $hash = password_hash($pass, PASSWORD_BCRYPT);
         $data = connexion();
         $requt = $data->prepare("INSERT INTO user VALUES (null,:nom,:prenom,:mail,:pass,:tel,'0','0','0',:token)");
         $requt->execute([':nom' => $nom, ':prenom' => $prenom, ':mail' => $mail, ':pass' => $hash, ':tel' => $tel, ':token' => $token]);
     }
-    public static function mailPresent($mail)
+    public static function mailExistant($mail)
     {
         $data = connexion();
         $requt = $data->prepare("SELECT* from user WHERE mail=:mail");
@@ -22,4 +22,5 @@ class ModelInscription
         $requt = $data->prepare("UPDATE user set confirme ='1', actif='1'  WHERE mail =:mail AND token=:token");
         $requt->execute([':mail' => $mail, ':token' => $token]);
     }
+    
 }

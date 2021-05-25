@@ -12,22 +12,21 @@
 
 <body>
   <?php
-  require_once "../view/ViewInscription.php";
+  require_once "../view/ViewUser.php";
   require_once "../view/ViewTemplate.php";
-  require_once "../model/ModelInscription.php";
+  require_once "../model/ModelUser.php";
   ViewTemplate::menu();
   if (isset($_POST['ajout'])) {
-    if (ModelInscription::mailPresent($_POST["mail"])) {
-      ViewTemplate::alert("l'adress mail existe deja", "danger", "CreatioInscription.php");
+    if (ModelUser::mailExistant($_POST["mail"])) {
+      ViewTemplate::alert("l'adress mail existe deja", "danger", "CreatioUser.php");
     } else {
-      $token = mt_rand(10000, 99999);
-      ModelInscription::ajoutInscription($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['pass'], $_POST['tel'], $token);
-      viewTemplate::alert('inscreption a été bien fait pour confirmer votre inscription cliker ic' ,'success ', 'ConfirmationMail.php?mail=' . $_POST['mail'].'&token='.$token);
-      
-
+      $token = uniqid();
+      $hash = password_hash($pass, PASSWORD_BCRYPT);
+      ModelUser::ajoutUser($_POST['nom'], $_POST['prenom'], $_POST['mail'], $hash, $_POST['tel'], $token);
+      viewTemplate::alert('inscreption a été bien fait pour confirmer votre inscription cliker ic', 'success ', 'ConfirmationMail.php?mail=' . $_POST['mail'] . '&token=' . $token);
     }
   } else {
-    ViewInscription::ajoutInscription();
+    ViewUser::ajoutUser ();
   }
   ViewTemplate::footer();
   ?>

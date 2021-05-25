@@ -14,9 +14,9 @@
 
 <body>
     <?php
-    require_once '../view/ViewConnexion.php';
+    require_once '../view/ViewUser.php';
     require_once '../view/ViewTemplate.php';
-    require_once '../model/MdelConnexion.php';
+    require_once '../model/ModelUser.php';
 
     viewTemplate::menu();
     ?>
