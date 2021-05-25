@@ -1,8 +1,8 @@
 <?php
 require_once "connexion.php";
-class ModelInscreption
+class ModelInscription
 {
-    public static function ajoutInscreption($nom, $prenom, $mail, $pass, $tel, $token)
+    public static function ajoutInscription($nom, $prenom, $mail, $pass, $tel, $token)
     {
         $hash = password_hash($pass, PASSWORD_BCRYPT);
         $data = connexion();

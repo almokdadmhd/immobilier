@@ -1,10 +1,10 @@
 <?php
-require_once "../model/Modelnscreption.php";
+require_once "../model/ModelInscription.php";
 
 
-class ViewInscreption
+class ViewInscription
 {
-  public static function ajoutInscreption()
+  public static function ajoutInscription()
 
   {
 
@@ -37,10 +37,27 @@ class ViewInscreption
 
       </form>
     </div>
-    <?php
+  <?php
+  }
+  public static function ajoutConnexion()
 
-    ?>
+  {
 
+    isset($_POST['ajout']) ? $formSubmit = true : $formSubmit = false;
+  ?>
+    <div class="container">
+      <div class="form-group">
+        <input type="email" name="mail" id="mail" value="<?php echo $formSubmit ?  $_POST['mail'] : '' ?>" class="form-control" aria-describedby="mail" placeholder="Adresse mail" required>
+      </div>
+      <div class="form-group">
+
+        <input type="password" name="pass" id="pass" value="<?php echo $formSubmit ?  $_POST['pass'] : '' ?>" class="form-control" aria-describedby="pass" placeholder="pass" required>
+      </div>
+
+
+
+      </form>
+    </div>
 <?php
   }
 }

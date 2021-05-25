@@ -9,7 +9,9 @@ class ViewTemplate
                 <?php echo $message;
                 if ($lien) {
                 ?>
-                    <br />Cliquez <a href="<?php echo $lien ?>"> ici</a> pour continuer la navigation.
+                    <br />Cliquez <a href="CreationInscription.php"> ici</a> pour continuer la navigation.
+                    <!-- <?php echo $lien ?>--> -->
+
                 <?php
                 }
                 ?>
@@ -21,23 +23,25 @@ class ViewTemplate
     {
     ?>
         <nav class="navbar navbar-expand-lg navbar-light bg-info mb-4">
-            <a class="navbar-brand" href="CreationInscreption.php">ImmoZack </a>
+            <a class="navbar-brand" href="CreationConnexion.php">Accueil </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="CreationInscreption.php">Inscreption <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="CreationInscription.php">Inscreption <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="CreationInscreption.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="CreationConnexion.php">Connexion <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="CreationInscreption.php">Property <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="Accueil.php">Deconnexion<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
 
                 </ul>
             </div>
+
         </nav>
+
     <?php
     }
 
@@ -48,6 +52,6 @@ class ViewTemplate
             Immobilier Zack © <?php echo date("Y"); ?>
         </footer>
 
-    <?php
+<?php
     }
 }
