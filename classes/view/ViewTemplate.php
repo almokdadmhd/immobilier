@@ -23,7 +23,7 @@ class ViewTemplate
     {
     ?>
         <nav class="navbar navbar-expand-lg navbar-light bg-info mb-4">
-            <a class="navbar-brand" href="CreationConnexion.php">Accueil </a>
+            <a class="navbar-brand" href="Accueil.php">Accueil </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">

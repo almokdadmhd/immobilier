@@ -20,7 +20,7 @@
 
     viewTemplate::menu();
     ?>
-    <p class="h1"> Bienvenue </p>
+    <p class="h1"> Bienvenue Chez ImmoZack </p>
 
 
    <?php
