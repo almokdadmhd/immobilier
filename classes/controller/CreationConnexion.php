@@ -17,30 +17,16 @@
     require_once "../model/ModelUser.php";
     require_once "../utils/Utils.php";
     ViewTemplate::menu();
-
-    if (isset($_POST['mail'])) {
-        if (ModelUser::mailExistant($_POST["mail"])) {
-            if (ModelUser::confirmMail($_POST["mail"], (ModelUser::mailExistant($_POST["mail"])["token"]))) {
-                $mdp1 = $_POST["pass"];
-                $mdp2 = ModelUser::mailExistant($_POST["mail"])["pass"];
-                if (Utils::verification($mdp1, $mdp2)) {
-                    $_SESSION["id"] = ModelUser::mailExistant($_POST["mail"])["id"];
-                    $_SESSION["nom"] = ModelUser::mailExistant($_POST["mail"])["nom"];
-                    $_SESSION["mail"] = ($_POST["mail"]);
-                    ViewUser::Connexion();
-                } else {
-                    ViewTemplate::alert("mail est existe  ", " danger  ", "CreationConnexion.php");
-                }
-            } else {
-                ViewTemplate::alert("la connexion est pas bon  ", " danger  ", "CreationConnexion.php");
-            }
+    if (isset($_POST['ajout'])) {
+        if (ModelUser::existantCnx($_POST["mail"], ($_POST["pass"]))) {
+            $_SESSION["mail"] = ($_POST["mail"]);
+            $_SESSION["pass"] = ($_POST["pass"]);
         } else {
-            ViewTemplate::alert("mail est n'existe pas  ", " danger  ", "CreationConnexion.php");
+            ViewTemplate::alert(" alerte login ou mdp erronés ", " danger  ", "CreationConnexion.php");
         }
+    } else {
+        ViewUser::Connexion();
     }
-    ViewUser::Connexion();
-
-
     ViewTemplate::footer();
 
 

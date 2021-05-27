@@ -9,14 +9,14 @@ class ModelUser
         $requt = $data->prepare("INSERT INTO user VALUES (null,:nom,:prenom,:mail,:pass,:tel,'0','0','0',:token)");
         $requt->execute([':nom' => $nom, ':prenom' => $prenom, ':mail' => $mail, ':pass' => $hash, ':tel' => $tel, ':token' => $token]);
     }
-    public static function mailExistant($mail)
+    public static function existantCnx ($mail, $pass)
     {
         $data = connexion();
-        $requt = $data->prepare("SELECT* from user WHERE mail=:mail");
-        $requt->execute([':mail' => $mail]);
+        $requt = $data->prepare("SELECT* from user WHERE mail=:mail and pass=:pass" );
+        $requt->execute([':mail' => $mail,':pass'=>$pass]);
         return $requt->fetch(PDO::FETCH_ASSOC);
     }
-    public static function confirmMail($mail,  $token)
+    public static function confirmCnx($mail,  $token)
     {
         $data = connexion();
         $requt = $data->prepare("UPDATE user set confirme ='1', actif='1'  WHERE mail =:mail AND token=:token");

@@ -11,7 +11,6 @@ class ViewTemplate
                 ?>
                     <br />Cliquez <a href="Accueil.php"> ici</a> pour continuer la navigation.
                     <!-- <?php echo $lien ?>-->
-
                 <?php
                 }
                 ?>
