@@ -1,23 +1,26 @@
 <?php
 require_once "connexion.php";
-class ModelUser
+class ModelAnnonce
 {
-    public static function ajoutAnnonce($nom, $prenom, $mail, $tel, $adresse, $photo, $description)
+    public static function ajoutAnnonce($titre, $description, $surface, $photos, $adresse, $ville, $codpost, $prix, $type)
     {
         $idcon = connexion();
 
         $requete = $idcon->prepare("
-                    INSERT INTO user VALUES (null,:nom, :prenom, :mail, :tel, :adresse, :photo, :description)
+                    INSERT INTO user VALUES (null,:titre, :description, :surface, :photos, :adresse, :ville, :codpost, :prix, :type)
                     
                 ");
         $requete->execute([
-            ':nom' => $nom,
-            ':prenom' => $prenom,
-            ':mail' => $mail,
-            ':tel' => $tel,
+            ':titre' => $titre,
+            ':description' => $description,
+            ':surface' => $surface,
+            ':photos' => $photos,
             ':adresse' => $adresse,
-            ':photo' => $photo,
-            ':description' => $description
+            ':ville' => $ville,
+            ':codpost' => $codpost,
+            ':prix' => $prix,
+            ':type' => $type,
+
         ]);
     }
     

@@ -15,18 +15,29 @@
     require_once "../view/ViewTypeBien.php";
     require_once "../view/ViewTemplate.php";
     require_once "../model/ModelTypeBien.php";
+    require_once "../utils/Utils.php";
+
+
     ViewTemplate::menu();
 
 
     if (isset($_POST['ajout'])) {
-        ModelTypeBien::ajoutTypeBien ($_POST['ajout']);
-        ViewTemplate::alert("Les données sont insérées avec succès", "success", "ListeTypeSoc.php");
+        $doonees = [$_POST['id'], $_POST['libelle']];
+        $types = ["id", "libelle"];
+        $datat = Utils::valider($doonees, $types);
+        if ($data){ 
+        ModelTypeBien::ajoutTypeBien ($_POST['type_bien']);
+        ViewTemplate::alert("Les données sont insérées avec succès", "success", "ListeTypeBien.php");
     } else {
         ViewTypeBien::ajouTypeBien ();
     }
+    ?>
+    <?php
+    }else { 
+        ViewTypeBien::ajouTypeBien ();
+
 
     ViewTemplate::footer();
-    ?>
     ?>
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/all.min.js"></script>

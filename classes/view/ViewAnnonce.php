@@ -1,46 +1,75 @@
 <?php
 require_once "../model/ModelAnnonce.php";
-
-class ViewUser
+class ViewTypeBien
 {
-    public static function ajoutAnnonce()
+    public static function ajoutTypeBien()
     {
-
-        isset($_POST['ajout']) ? $formSubmit = true : $formSubmit = false;
+        $typesTypeBien = ModelTypeBien::listeTypeBien();
 ?>
         <div class="container">
-            <div id="erreurs"></div>
-            <form name="ajout_annonce" id="ajout_annonce" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" enctype="multipart/form-data">
-                <div class="form-group">
-                    <input type="text" name="titre" id="titre" value="<?php echo $formSubmit ?  $_POST['titre'] : '' ?>" class="form-control" aria-describedby="titre" placeholder="Titre" required>
+            <form name="ajout_typebien" id="ajout_typebien" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+                <select name="type_bien_id" class="form-control" required>
+                    <option value="" selected>Sélectionnez un type de bien</option>
+                    <?php
+                    foreach ($typesTypeBien as $typesTypeBien) {
+                    ?>
+                        <option value="<?php echo $typesTypeBien['id'] ?>"><?php echo $typesTypeBien['type_bien'] ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <div class=" form-group">
+                    <input type="url" name="lien" id="lien" class="form-control" aria-describedby="lien" placeholder="Lien" required>
                 </div>
-                <div class="form-group">
-                    <input type="text" name="discription" id="discription" value="<?php echo $formSubmit ?  $_POST['discription'] : '' ?>" class="form-control" aria-describedby="discription" placeholder="Prénom" required>
-                </div>
-                <div class="form-group">
-                    <input type="numbre" name="surface" id="surface" value="<?php echo $formSubmit ?  $_POST['surface'] : '' ?>" class="form-control" aria-describedby="surface" placeholder="Surface " required>
-                </div>
-                <div class="form-group">
-                    <input type="file" name="fichier" id="fichier" accept="image/*" class="form-control" aria-describedby="fichier" placeholder="fichier">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="discription" id="discription" value="<?php echo $formSubmit ?  $_POST['discription'] : '' ?>" class="form-control" aria-describedby="discription" placeholder="Prénom" required>
-                </div>
-                <div class="form-group">
-                    <input type="numbre" name="surface" id="surface" value="<?php echo $formSubmit ?  $_POST['surface'] : '' ?>" class="form-control" aria-describedby="surface" placeholder="Surface " required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="titre" id="titre" value="<?php echo $formSubmit ?  $_POST['titre'] : '' ?>" class="form-control" aria-describedby="titre" placeholder="Titre" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="discription" id="discription" value="<?php echo $formSubmit ?  $_POST['discription'] : '' ?>" class="form-control" aria-describedby="discription" placeholder="Prénom" required>
-                </div>
-                <div class="form-group">
-                    <input type="numbre" name="surface" id="surface" value="<?php echo $formSubmit ?  $_POST['surface'] : '' ?>" class="form-control" aria-describedby="surface" placeholder="Surface " required>
-                </div>
+                <button type="submit" class="btn btn-primary" name="ajout">Ajouter</button>
+                <button type="reset" class="btn btn-danger">Annuler</button>
+            </form>
+        </div>
+    <?php
+    }
+    public static function listeTypeBien()
+    {
+        $listeTypeBien = ModelTypeBien::listeTypeBien();
+    ?>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">titre</th>
+                    <th scope="col">description</th>
+                    <th scope="col">surface</th>
+                    <th scope="col">photos</th>
+                    <th scope="col">ville</th>
+                    <th scope="col">adresse</th>
+                    <th scope="col">codpost</th>
+                    <th scope="col">prix</th>
+                    <th scope="col">type</th>
+                    <th scope="col">lien</th>
+                    <th scope="col">action</th>
+                </tr>
+            </thead>
+            <tbody>
 
 
-
-        <?php
+                <?php
+                foreach ($listeTypeBien as $bien) {
+                ?>
+                    <tr>
+                        <td><?php echo $bien['bien_id'] ?></td>
+                        <td><?php echo $bien['titre'] ?></td>
+                        <td><?php echo $bien['prenom'] ?></td>
+                        <td><?php echo $bien['type_soc'] ?></td>
+                        <td><?php echo $bien['lien'] ?></td>
+                        <td>
+                            <a class="btn btn-info" href="ModifTypeBien.php?id=<?php echo $bien['type_bien_id'] ?>" role="button">Modifier</a>
+                            <a class="btn btn-danger" href="SuppressionTypeBien.php?id=<?php echo $bien['type_bien_id'] ?>" role="button">Supprimer</a>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+<?php
     }
 }

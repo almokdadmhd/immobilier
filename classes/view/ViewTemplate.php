@@ -41,6 +41,9 @@ class ViewTemplate
                         <a class="nav-link" href="CreationTypeBien.php">CreationTypeBien<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
+                        <a class="nav-link" href="ListeTypeBien.php">ListeTypeBien<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="CreationAnnonce.php">CreationAnnonce<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
