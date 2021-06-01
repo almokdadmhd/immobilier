@@ -21,7 +21,7 @@
       ViewTemplate::alert("l'adress mail existe deja", "danger", "CreatioUser.php");
     } else {
       $token = uniqid();
-      $hash = password_hash($pass, PASSWORD_BCRYPT);
+      $hash = password_hash($_POST['pass'], PASSWORD_BCRYPT);
       ModelUser::ajoutUser($_POST['nom'], $_POST['prenom'], $_POST['mail'], $hash, $_POST['tel'], $token);
       viewTemplate::alert('inscreption a été bien fait pour confirmer votre inscription cliker ic', 'success ', 'ConfirmationMail.php?mail=' . $_POST['mail'] . '&token=' . $token);
     }

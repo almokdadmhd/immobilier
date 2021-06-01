@@ -19,6 +19,7 @@
     require_once '../model/ModelUser.php';
 
     viewTemplate::menu();
+    var_dump($_SESSION);
     ?>
     <p class="h1"> Bienvenue Chez ImmoZack </p>
 

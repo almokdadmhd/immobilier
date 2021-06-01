@@ -2,28 +2,7 @@
 require_once "connexion.php";
 class ModelUser
 {
-    public static function ajoutUser($nom, $prenom, $mail, $pass, $tel, $token)
-    {
-        $hash = password_hash($pass, PASSWORD_BCRYPT);
-        $data = connexion();
-        $requt = $data->prepare("INSERT INTO user VALUES (null,:nom,:prenom,:mail,:pass,:tel,'0','0','0',:token)");
-        $requt->execute([':nom' => $nom, ':prenom' => $prenom, ':mail' => $mail, ':pass' => $hash, ':tel' => $tel, ':token' => $token]);
-    }
-    public static function existantCnx ($mail, $pass)
-    {
-        $data = connexion();
-        $requt = $data->prepare("SELECT* from user WHERE mail=:mail and pass=:pass" );
-        $requt->execute([':mail' => $mail,':pass'=>$pass]);
-        return $requt->fetch(PDO::FETCH_ASSOC);
-    }
-    public static function confirmCnx($mail,  $token)
-    {
-        $data = connexion();
-        $requt = $data->prepare("UPDATE user set confirme ='1', actif='1'  WHERE mail =:mail AND token=:token");
-        $requt->execute([':mail' => $mail, ':token' => $token]);
-    }
-
-
+    
     private $id;
     private $nom;
     private $prenom;
@@ -97,6 +76,23 @@ class ModelUser
         $rPrep = $datay->prepare("UPDATE user SET $colonne=? WHERE mail=? ");
         $rPrep->execute([$valeur, $mail]);
     }
+    
+     //modif token
+     public static function modifToken($token)
+     {
+         $datay = connexion();
+         $rPrep = $datay->prepare("UPDATE user SET $token=? WHERE token=? ");
+         $rPrep->execute([$token]);
+     }
+     //modif pass
+     public static function modifPass($pass)
+     {
+         $datay = connexion();
+         $rPrep = $datay->prepare("UPDATE user SET $pass=? WHERE pass=? ");
+         $rPrep->execute([$pass]);
+     }
+     
+
 
     //GETTER user
     public function getId()
@@ -205,4 +201,38 @@ class ModelUser
         $this->favoris = $newFavoris;
         return $this;
     }
+    public static function ajoutUser($nom, $prenom, $mail, $pass, $tel, $token)
+    {
+        $data = connexion();
+        $requt = $data->prepare("INSERT INTO user VALUES (null,:nom,:prenom,:mail,:pass,:tel,'0','0','0',:token)");
+        $requt->execute([':nom' => $nom, ':prenom' => $prenom, ':mail' => $mail, ':pass' => $pass, ':tel' => $tel, ':token' => $token]);
+    }
+    public static function existantCnx ($mail, $pass)
+    {
+        $data = connexion();
+        $requt = $data->prepare("SELECT* from user WHERE mail=:mail and pass=:pass" );
+        $requt->execute([':mail' => $mail,':pass'=>$pass]);
+        return $requt->fetch(PDO::FETCH_ASSOC);
+    }
+    public static function confirmCnx($mail,  $token)
+    {
+        $data = connexion();
+        $requt = $data->prepare("UPDATE user set confirme ='1', actif='1'  WHERE mail =:mail AND token=:token");
+        $requt->execute([':mail' => $mail, ':token' => $token]);
+    }
+    public static function mailExistant($mail)
+    {
+        $data = connexion();
+        $requt = $data->prepare("SELECT* from user WHERE mail=:mail ");
+        $requt->execute([':mail' => $mail]);
+        return $requt->fetch(PDO::FETCH_ASSOC);
+    }
+    public static function confMailPassToken($mail, $pass,  $token)
+    {
+        $data = connexion();
+        $requt = $data->prepare("UPDATE user set confirme ='1', actif='1'  WHERE mail =:mail AND token=:token");
+        $requt->execute([':mail' => $mail, ':token' => $token]);
+    }
+
+
 }

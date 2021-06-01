@@ -9,7 +9,7 @@ class ViewTemplate
                 <?php echo $message;
                 if ($lien) {
                 ?>
-                    <br />Cliquez <a href="Accueil.php"> ici</a> pour continuer la navigation.
+                    <br />Cliquez <a href="<?php echo $lien ?>"> ici</a> pour continuer la navigation.
                     <!-- <?php echo $lien ?>-->
                 <?php
                 }
@@ -35,22 +35,27 @@ class ViewTemplate
                         <a class="nav-link" href="Accueil.php">Deconnexion<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-
+                        <a class="nav-link" href="ModifMdp.php">Mot de pass oublie<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="CreationTypeBien.php">CreationTypeBien<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="CreationAnnonce.php">CreationAnnonce<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
                 </ul>
             </div>
-
         </nav>
 
     <?php
     }
-
     public static function footer()
     {
     ?>
         <footer class="bg-info text-center mt-4 py-2">
             Immobilier Zack © <?php echo date("Y"); ?>
         </footer>
-
 <?php
     }
 }

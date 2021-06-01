@@ -18,11 +18,21 @@
     require_once "../utils/Utils.php";
     ViewTemplate::menu();
     if (isset($_POST['ajout'])) {
-        if (ModelUser::existantCnx($_POST["mail"], ($_POST["pass"]))) {
-            $_SESSION["mail"] = ($_POST["mail"]);
-            $_SESSION["pass"] = ($_POST["pass"]);
+        if (ModelUser::getByMail($_POST["mail"])) {
+            $userTab = ModelUser::getByMail($_POST["mail"]); // recuperation du user selon son mail dans un tab userTab
+            $pass = $userTab['pass']; // recuperation du mdp
+            if (password_verify($_POST["pass"], $pass)) { // test validité mdp
+                $user = new ModelUser($userTab['id']);  // instanciation du user en fonction de son id
+                $_SESSION["id"] = $user->getId();
+                $_SESSION["role"] = $user->getRole();
+                $_SESSION["nom"] = $user->getPrenom() . " " . $user->getNom();
+                header('Location: Accueil.php');
+                exit();
+            } else {
+                ViewTemplate::alert(" Mot de passe erronée ", " danger  ", "CreationConnexion.php");
+            }
         } else {
-            ViewTemplate::alert(" alerte login ou mdp erronés ", " danger  ", "CreationConnexion.php");
+            ViewTemplate::alert(" adresse mail erronée ", " danger  ", "CreationConnexion.php");
         }
     } else {
         ViewUser::Connexion();
