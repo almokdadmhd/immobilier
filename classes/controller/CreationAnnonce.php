@@ -27,11 +27,12 @@
             $_POST['photos'],
             $_POST['adresse'],
             $_POST['ville'],
-            $_POST['codpost'],
-            $_POST['prix'],
-            $_POST['type']
+            $_POST['codpost']  ,
+            $_POST['prix'] ,
+            $_POST['type'],
+            $_POST['type_bien_id']
         ];
-        $types = ["id", "titr", "description", "surface", "photos", "adresse", "ville", "codpost", "prix", "type",];
+        $types = ["id", "titr", "description", "surface", "photos", "adresse", "ville", "codpost", "prix", "type", "type_bien_id"];
 
         $datat = Utils::valider($doonees, $types);
 
@@ -40,16 +41,16 @@
             $upload = Utils::upload($extensions, $_FILES['fichier']);
             if ($upload['uploadOk']) {
                 $file_name = $upload['file_name'];
-                ModelTypeBien::ajoutTypeBien($data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9]);
-                ViewTemplate::alert("Les données sont insérées avec succès", "success", "ListeTypeBien.php");
+                ModelAnnonce::ajoutAnnonce ($data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8], $data[9], $type_bien_id[10]);
+                ViewTemplate::alert("Les données sont insérées avec succès", "success", "ListeAnnonce.php");
             } else {
                 ViewTemplate::alert($upload['errors'], "danger", htmlspecialchars($_SERVER['PHP_SELF']));
             }
         } else {
-            ViewTypeBien::ajoutTypeBien();
+            ViewAnnonce::ajoutAnnonce();
         }
     } else {
-        ViewTypeBien::ajoutTypeBien();
+        ViewAnnonce::ajoutAnnonce ();
     }
     ViewTemplate::footer();
     ?>

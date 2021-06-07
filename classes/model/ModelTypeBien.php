@@ -6,7 +6,7 @@ class ModelTypeBien
     {
         $idcon = connexion();
         $requete = $idcon->prepare("
-                    INSERT INTO type_bien VALUES (null,:typebienId)
+                    INSERT INTO type_bien VALUES (null, :id, :libelle)
                 ");
         $requete->execute([
             'id' => $id,

@@ -24,8 +24,8 @@ class ViewUser
         <div class="form-group">
           <input type="tel" name="tel" id="tel" value="<?php echo $formSubmit ?  $_POST['tel'] : '' ?>" class="form-control" aria-describedby="tel" placeholder="Tel" required>
         </div>
-        <button type="submit" name="ajout" class="btn btn-primary">Ajouter</button>
-        <button type="reset" name="annuler" class="btn btn-danger">Annuler</button>
+        <button type="submit" name="ajout" class="btn btn-success">Ajouter</button>
+        <button type="reset" name="annuler" class="btn btn-secondary">Annuler</button>
       </form>
     </div>
   <?php
@@ -44,8 +44,8 @@ class ViewUser
           <input type="password" name="pass" id="pass" value="<?php echo $formSubmit ?  $_POST['pass'] : '' ?>" class="form-control" aria-describedby="pass" placeholder="pass" required>
         </div>
         <div class="form-group">
-          <button type="submit" name="ajout" class="btn btn-primary">Ajouter</button>
-          <button type="reset" name="annuler" class="btn btn-danger">Annuler</button>
+          <button type="submit" name="ajout" class="btn btn-success">Ajouter</button>
+          <button type="reset" name="annuler" class="btn btn-secondary">Annuler</button>
           <div class="form-group">
       </form>
     </div>
@@ -73,8 +73,8 @@ class ViewUser
         <div class="form-group">
           <input type="tel" name="tel" id="tel" value="<?php echo $formSubmit ?  $_POST['tel'] : '' ?>" class="form-control" aria-describedby="tel" placeholder="Tel" required>
         </div>
-        <button type="submit" name="ajout" class="btn btn-primary">Ajouter</button>
-        <button type="reset" name="annuler" class="btn btn-danger">Annuler</button>
+        <button type="submit" name="ajout" class="btn btn-success">Ajouter</button>
+        <button type="reset" name="annuler" class="btn btn-secondary">Annuler</button>
       </form>
     </div>
   <?php
@@ -108,8 +108,8 @@ class ViewUser
           <input type="email" name="mail" id="mail" value="<?php echo $formSubmit ?  $_POST['mail'] : '' ?>" class="form-control" aria-describedby="mail" placeholder="Adresse mail" required>
         </div>
         <div class="form-group">
-          <button type="submit" name="ajout" class="btn btn-primary">Ajouter</button>
-          <button type="reset" name="annuler" class="btn btn-danger">Annuler</button>
+        <button type="submit" name="ajout" class="btn btn-success">Ajouter</button>
+          <button type="reset" name="annuler" class="btn btn-secondary">Annuler</button>
           <div class="form-group">
       </form>
     </div>

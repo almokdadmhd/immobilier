@@ -14,12 +14,13 @@
 
 
     <?php
-    require_once "../view/ViewAnnonce.php";
+    require_once "../model/ModelTypeBien.php";
     require_once "../view/ViewTemplate.php";
+    require_once "../view/ViewTypeBien.php";
     require_once "../utils/Utils.php";
 
     ViewTemplate::menu();
-    ViewTypeBien::listeTypeBien();
+    ViewTypeBien::listeTypeBien ();
     ViewTemplate::footer();
     ?>
 

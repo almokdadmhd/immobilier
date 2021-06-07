@@ -1,3 +1,4 @@
+
 .card {   background-color:lawngreen ;
 }
 .top {
@@ -262,14 +263,6 @@ section .section-title1 {
   border: none;
   cursor: pointer;
 }
-/*contact form*/
-footer {
-  background-color: #038fcc;
-}
-footer svg {
-  background-color: #0078ac;
-  border-radius: 5px;
-}
 
 /**media query 768*/
 @media (max-width: 768px) {
@@ -303,4 +296,18 @@ footer svg {
     color: #007bff;
   }
   /*price*/
+}
+
+footer{background:darkgreen}
+footer ul.link-list li a{
+	color: rgb(35, 94, 30);
+}
+footer ul.link-list li a:hover {
+	color: #111523;
+}
+
+aside .widgetheading {
+	position: relative;
+	border-bottom:darksalmon 1px solid;
+	padding-bottom: 9px;
 }

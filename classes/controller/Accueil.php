@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/all.min.css">
     <link rel="stylesheet" href="../../css/styles.css" />
+
+
     <title> immobilier</title>
 </head>
 
@@ -19,20 +21,20 @@
     require_once '../model/ModelUser.php';
 
     viewTemplate::menu();
-    var_dump($_SESSION);
     ?>
+    
     <p class="h1"> Bienvenue Chez ImmoZack </p>
 
 
-   <?php
+    <?php
 
-     
+
 
     viewTemplate::footer();
 
 
     ?>
-    
+
 </body>
 
 </html>
