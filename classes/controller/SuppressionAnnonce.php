@@ -12,34 +12,25 @@
 
 <body>
     <?php
-    require_once "../view/ViewTypeBien.php";
+    require_once "../view/ViewAnnonce.php";
     require_once "../view/ViewTemplate.php";
-    require_once "../model/ModelTypeBien.php";
+    require_once "../model/ModelAnnonce.php";
     require_once "../utils/Utils.php";
     ViewTemplate::menu();
-    if (isset($_POST['submit'])) {
-        ModelTypeBien::ajoutTypeBien($_POST['type_bien'], $_POST['libelle']);
-        ViewTemplate::alert("Les données sont insérées avec succès", "success", "ListeTypeBien.php");
+
+    if (isset($_GET['id'])) {
+        if (ModelAnnonce::getAnnonce($_GET['id'])) {
+            ModelAnnonce::SuppressioAnnonce($_GET['id']);
+            ViewTemplate::alert("L'annonce a été supprimé avec succès.", "success", "ListeAnnonce.php");
+        } else {
+            ViewTemplate::alert("L'annonce n'existe pas.", "danger", "ListeAnnonce.php");
+        }
     } else {
-        ViewTypeBien::ajoutTypeBien();
+        ViewTemplate::alert("Aucune donnée n'a été transmise.", "danger", "ListeAnnonce.php");
     }
 
     ViewTemplate::footer();
     ?>
-    <script src="../../js/jquery-3.5.1.min.js"></script>
-    <script src="../../js/all.min.js"></script>
-    <script src="../../js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/ctrl.js"></script>
-</body>
-
-</html>
-
-
-
-
-
-
-
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/all.min.js"></script>
     <script src="../../js/bootstrap.bundle.min.js"></script>

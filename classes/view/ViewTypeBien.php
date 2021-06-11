@@ -32,7 +32,7 @@ class ViewTypeBien
                     <div class="col-sm-12">
                         <h1>Veuillez Choisir Votre Bien</h1>
                         <hr class="my-4" />
-                        <div align="center">
+                        <div text-align= "center">
                             <button class="btn btn-success filter-button" data-filter="appartement">
                                 appartement
                             </button>
