@@ -4,26 +4,16 @@ class ViewTypeBien
 {
     public static function ajoutTypeBien()
     {
-        $typesBien = ModelTypeBien::listeTypeBien();
 ?>
-        <div class="container">
-            <form name="ajout_Type_bien" id="ajout_Type_bien" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
-                <select name="type_bien_id" class="form-control" required>
-                    <option value="" selected>Sélectionnez un type de bien</option>
-                    <?php
-                    foreach ($typesBien as $typesBien) {
-                    ?>
-                        <option value="<?php echo $typesBien['id'] ?>"><?php echo $typesBien['type_bien'] ?></option>
-                    <?php
-                    }
-                    ?>
-                </select><br>
-                <div class=" form-group">
-                    <input type="text" name="libelle" id="libelle" class="form-control" aria-describedby="libelle" placeholder="libelle">
+        <div class="container p-5">
+            <div id="erreurs"></div>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="reset" method="post">
+                <div class="form-group">
+                    <input type="text" id="libelle" name="libelle" class="form-control" placeholder="libelle">
                 </div>
-
-                <button type="submit" class="btn btn-success" name="ajout">Ajouter</button>
-                <button type="reset" class="btn btn-secondary">Annuler</button>
+                <div>
+                    <button type="submit" id="ajout" name="ajout" class="btn btn-primary">Valider</button>
+                </div>
             </form>
         </div>
         <div class="jumbotron text-center" style="margin-bottom: 0; background-color: #fbfcff">
@@ -32,7 +22,7 @@ class ViewTypeBien
                     <div class="col-sm-12">
                         <h1>Veuillez Choisir Votre Bien</h1>
                         <hr class="my-4" />
-                        <div text-align= "center">
+                        <div text-align="center">
                             <button class="btn btn-success filter-button" data-filter="appartement">
                                 appartement
                             </button>
@@ -48,32 +38,12 @@ class ViewTypeBien
                             <div class="row">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-xs-6 thumb filter appartement">
-                                        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="../../images/appartement .jpg" data-target="#image-gallery">
+                                        <a class="thumbnail" href="#" data-image-id="a" data-toggle="modal" data-title="" data-image="../../images/appartement .jpg" data-target="#image-gallery">
                                             <img class="img-thumbnail" src="../../images/appartement .jpg" alt="appartement" />
                                         </a>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-xs-6 thumb filter maison">
                                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="../../images/maison.jpg" data-target="#image-gallery">
-                                            <img class="img-thumbnail" src="../../images/maison.jpg" alt="maison" />
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb filter villa">
-                                        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="../../images/villa.jpg" data-target="#image-gallery">
-                                            <img class="img-thumbnail" src="../../images/villa.jpg" alt="villa" />
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb filter studio">
-                                        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="../../images/studio.jpeg" data-target="#image-gallery">
-                                            <img class="img-thumbnail" src="../../images/studio.jpeg" alt="studio" />
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb filter appartement">
-                                        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="../../images/appartement .jpg" data-target="#image-gallery">
-                                            <img class="img-thumbnail" src="../../images/appartement .jpg" alt="appartement" />
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb filter maison">
-                                        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="i../../images/maison.jpg" data-target="#image-gallery">
                                             <img class="img-thumbnail" src="../../images/maison.jpg" alt="maison" />
                                         </a>
                                     </div>
@@ -98,13 +68,13 @@ class ViewTypeBien
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <img id="image-gallery-image" class="img-responsive col-md-12" src="" />
+                                                <img id="image-gallery-image" class="img-responsive col-md-12" src="../../images/appartement .jpg" />
+
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary float-left" id="show-previous-image">
                                                     <i class="fa fa-arrow-left"></i>
                                                 </button>
-
                                                 <button type="button" id="show-next-image" class="btn btn-secondary float-right">
                                                     <i class="fa fa-arrow-right"></i>
                                                 </button>
@@ -135,11 +105,9 @@ class ViewTypeBien
                         foreach ($listeTypeBien as $bien) {
                         ?>
                             <tr>
-                                <td><?php echo $bien['user_id'] ?></td>
+                                <td><?php echo $bien['libelle'] ?></td>
                                 <td><?php echo $bien['libelle'] ?></td>
                                 <td>
-                                    <a class="btn btn-info" href="ModifTypeBien.php?id=<?php echo $bien['ref_id'] ?>" role="button">Modifier</a>
-                                    <a class="btn btn-danger" href="SuppressionTypeBien.php?id=<?php echo $bien['ref_id'] ?>" role="button">Supprimer</a>
                                 </td>
                             </tr>
 

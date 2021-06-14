@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,16 +14,13 @@
 
 <body>
     <?php
-    require_once "../view/ViewUser.php";
-    require_once "../view/ViewTemplate.php";
-    require_once "../model/ModelUser.php";
-    require_once "../utils/Utils.php";
-        session_unset();
-        session_destroy();
-        header('location:Accueil.php');
+
+    session_unset();
+    session_destroy();
+    header('location:Accueil.php');
 
 
-   
+
 
 
     ?>

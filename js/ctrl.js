@@ -177,4 +177,48 @@ function midifUser(data) {
       });
     }
   });
+  $("#a").click(function (e) {
+    let request = $.ajax({
+      method: "POST",
+      url: " http://immobilier/classes/controller/CreationTypeBien.php",
+      data: {
+        test: "a",
+      },
+      dataType: "html",
+    });
+    request.done(function (retour) {
+      console.log(retour);
+      $("thumbnail").html(retour);
+    });
+    request.fail(function (http_error) {
+      //Code à jouer en cas d'éxécution en erreur du script du PHP
+
+      let server_msg = http_error.responseText;
+      let code = http_error.status;
+      let code_label = http_error.statusText;
+      alert("Erreur " + code + " (" + code_label + ") : " + server_msg);
+    });
+    request.always(function () {
+      //Code à jouer après done OU fail dans tous les cas
+    });
+  });
+  function midifUser(data) {
+    let request = $.ajax({
+      type: "POST",
+      url: "ModifProfil.php",
+      data: data,
+      dataType: "html",
+    });
+  
+    request.done(function (response) {
+      listeUsers();
+    });
+  
+    request.fail(function (http_error) {
+      let server_msg = http_error.responseText;
+      let code = http_error.status;
+      let code_label = http_error.statusText;
+      alert("Erreur " + code + " (" + code_label + ") : " + server_msg);
+    });
+  }
 }

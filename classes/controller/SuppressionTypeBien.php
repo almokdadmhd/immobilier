@@ -1,47 +1,37 @@
-<!DOCTYPE html>
-<html>
+<?php session_start() ?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1  shrink-to-fit=no" />
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/all.min.css">
-    <link rel="stylesheet" href="../../css/styles.css" />
-    <title> immobilier</title>
-</head>
+<?php
+require_once "../view/ViewTypeBien.php";
+require_once "../view/ViewTemplate.php";
+require_once "../model/ModelTypeBien.php";
+require_once "../utils/Utils.php";
 
-<body>
-    <?php
-    require_once "../view/ViewTypeBien.php";
-    require_once "../view/ViewTemplate.php";
-    require_once "../model/ModelTypeBien.php";
-    require_once "../utils/Utils.php";
-   
-    ViewTemplate::menu();
+ViewTemplate::fichierCss();
+ViewTemplate::menu();
 
-    if (isset($_GET['id'])) {
-        if (ModelTypeBien::getTypebien ($_GET['id'])) {
-            ModelTypeBien::SuppressionTypeBien ($_GET['id']);
-            ViewTemplate::alert("Le type bien a été supprimé avec succès.", "success", "ListeTypeBien.php");
-        } else {
-            ViewTemplate::alert("Le type social n'existe pas.", "danger", "ListeTypeBien.php");
-        }
+if (isset($_GET['id'])) {
+    if (ModelTypeBien::getTypebien($_GET['id'])) {
+        ModelTypeBien::SuppressionTypeBien($_GET['id']);
+        ViewTemplate::alert("Le type bien a été supprimé avec succès.", "success", "ListeTypeBien.php");
     } else {
-        ViewTemplate::alert("Aucune donnée n'a été transmise.", "danger", "ListeTypeBien.php");
+        ViewTemplate::alert("Le type social n'existe pas.", "danger", "ListeTypeBien.php");
     }
+} else {
+    ViewTemplate::alert("Aucune donnée n'a été transmise.", "danger", "ListeTypeBien.php");
+}
 
-    ViewTemplate::footer();
-    ?>
+ViewTemplate::footer();
+?>
 
 
 
-   
 
 
-    <script src="../../js/jquery-3.5.1.min.js"></script>
-    <script src="../../js/all.min.js"></script>
-    <script src="../../js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/ctrl.js"></script>
+
+<script src="../../js/jquery-3.5.1.min.js"></script>
+<script src="../../js/all.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script src="../../js/ctrl.js"></script>
 </body>
 
 </html>

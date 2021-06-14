@@ -2,14 +2,13 @@
 require_once "connexion.php";
 class ModelTypeBien
 {
-    public static function ajoutTypeBien($id, $libelle)
+    public static function ajoutTypeBien( $libelle)
     {
         $idcon = connexion();
         $requete = $idcon->prepare("
-                    INSERT INTO type_bien VALUES (null, :id, :libelle)
+                    INSERT INTO type_bien VALUES (null, :libelle)
                 ");
         $requete->execute([
-            'id' => $id,
             ':libelle' => $libelle,
         ]);
     }

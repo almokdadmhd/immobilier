@@ -108,11 +108,57 @@ class ViewUser
           <input type="email" name="mail" id="mail" value="<?php echo $formSubmit ?  $_POST['mail'] : '' ?>" class="form-control" aria-describedby="mail" placeholder="Adresse mail" required>
         </div>
         <div class="form-group">
-        <button type="submit" name="ajout" class="btn btn-success">Ajouter</button>
+          <button type="submit" name="ajout" class="btn btn-success">Ajouter</button>
           <button type="reset" name="annuler" class="btn btn-secondary">Annuler</button>
           <div class="form-group">
       </form>
     </div>
+  <?php
+  }
+  public static function formHome()
+  {
+  ?>
+
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title text-center">
+              <h2>Notre Organization</h2>
+              <p>Vous cherchez à acheter ?
+                Vous souhaitez vendre ?
+                Nous sommes disponibles et nous nous engageons à vous répondre dans les meilleurs délais dès la réception de votre mail ou de votre message
+                A bientôt ! <br>ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <div class="about-text">
+              <p>Grids is a responsive Multipurpose Template. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+
+              <ul class="withArrow">
+                <li><span class="fa fa-angle-right"></span> Lorem ipsum dolor sit amet</li>
+                <li><span class="fa fa-angle-right"></span> consectetur adipiscing elit</li>
+                <li><span class="fa fa-angle-right"></span> Curabitur aliquet quam id dui</li>
+                <li><span class="fa fa-angle-right"></span> Donec sollicitudin molestie malesuada.</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="about-image">
+              <img src="../../images/img5.jpg" alt="About Images">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
 <?php
+
   }
 }

@@ -1,3 +1,4 @@
+
 <?php
 
 function connexion()
@@ -5,7 +6,7 @@ function connexion()
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname= "immo";
+    $dbname = "immo";
 
     try {
         $idcon = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
@@ -15,7 +16,4 @@ function connexion()
         return FALSE;
         exit();
     }
-    
 }
-
-

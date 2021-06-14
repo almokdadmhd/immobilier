@@ -37,27 +37,14 @@ class ViewTemplate
                                 <h2>
                                     <p class="pull-left hidden-xs centre ">La Clé de votre Univers !</p>
                                 </h2>
-
                             </div>
                         </div>
                     </div>
                 </div>
                 <nav class="navbar navbar-expand-lg navbar-light bg-success mb-4">
-
                     <header>
                         <div class="navbar navbar-default navbar-static-top">
                             <div class="container">
-                                <div class="navbar-header">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                                <div class="navbar-collapse collapse ">
-                                    <ul class="nav navbar-nav">
-                                        <li class="dropdown">
-
-                                </div>
                             </div>
                         </div>
                     </header>
@@ -72,10 +59,10 @@ class ViewTemplate
                                 <a class="nav-link" href="CreationConnexion.php">Connexion <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="Accueil.php">Deconnexion<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="CreationDeconnexion.php">Deconnexion<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="ModifMdp.php">Mot de pass oublie<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="ModifMdp.php">Mdp oublie<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="CreationTypeBien.php">CreationTypeBien<span class="sr-only">(current)</span></a>
@@ -104,44 +91,77 @@ class ViewTemplate
                     <div class="row">
                         <div class="col-md-2">
                             <div class="widget">
-                                <h5 class="widgetheading">Our Contact</h5>
+                                <h5 class="widgetheading">Nos Contact</h5>
                                 <address>
-                                    <strong>Bellevue Immobilier </strong><br>
-                                    Al mokdad Mhd <br>
-                                    France Lille.
+                                    <strong>Bellevue Immobilier </strong>
+                                    <br>
+                                    BELLEVUE IMMOBILIER <br>
                                 </address>
                                 <p>
-                                    <i class="icon-phone"></i> +33.7.82.57.98.84 <br>
-                                    <i class="icon-envelope-alt"></i> almokdad.mhd@gmail.com
+                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
+                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
+                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="widget">
-                                <h5 class="widgetheading">Quick Links</h5>
-                                <ul class="link-list">
-                                    <li><a href="#">Terms and conditions</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Contact us</a></li>
-                                </ul>
+                                <h5 class="widgetheading">Nos Contact</h5>
+                                <address>
+                                    <strong>Bellevue Immobilier </strong>
+                                    <br>
+                                    BELLEVUE IMMOBILIER <br>
+                                </address>
+                                <p>
+                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
+                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
+                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
+                                </p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="widget">
-                                <h5 class="widgetheading">Latest posts</h5>
-                                <ul class="link-list">
-                                    <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                    <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                                </ul>
+                                <h5 class="widgetheading">Nos Contact</h5>
+                                <address>
+                                    <strong>Bellevue Immobilier </strong>
+                                    <br>
+                                    BELLEVUE IMMOBILIER <br>
+                                </address>
+                                <p>
+                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
+                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
+                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
+                                </p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="widget">
-                                <h5 class="widgetheading">Recent News</h5>
-                                <ul class="link-list">
-                                    <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                    <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                                </ul>
+                                <h5 class="widgetheading">Nos Contact</h5>
+                                <address>
+                                    <strong>Bellevue Immobilier </strong>
+                                    <br>
+                                    BELLEVUE IMMOBILIER <br>
+                                </address>
+                                <p>
+                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
+                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
+                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="widget">
+                                <h5 class="widgetheading">Nos Contact</h5>
+                                <address>
+                                    <strong>Bellevue Immobilier </strong>
+                                    <br>
+                                    BELLEVUE IMMOBILIER <br>
+                                </address>
+                                <p>
+                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
+                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
+                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -160,18 +180,61 @@ class ViewTemplate
 
                         </div>
                     </div>
-                    <div id="sub-footer">
-                        <div class="container fluide">
-                            <div class="row">
-                                <div class="copyright">
-                                    <p>
-                                        Immobilier Zack © <?php echo date("Y"); ?>
-                                    </p>
-                                </div>
-
-                            </div>
-
             </footer>
+        <?php
+        }
+        public static function fichierJS()
+        { ?>
+
+            <script src="../../js/jquery-3.5.1.min.js"></script>
+            <script src="../../js/all.min.js"></script>
+            <script src="../../js/bootstrap.bundle.min.js"></script>
+            <script src="../../js/ctrl.js"></script>
+            <script src="../../js/jquery.js"></script>
+            <script src="../../js/jquery.easing.1.3.js"></script>
+            <script src="../../js/bootstrap.min.js"></script>
+            <script src="../../js/jquery.fancybox.pack.js"></script>
+            <script src="../../js/jquery.fancybox-media.js"></script>
+            <script src="../../js/jquery.flexslider.js"></script>
+            <script src="../../js/animate.js"></script>
+            <script src="../../js/modernizr.custom.js"></script>
+            <script src="../../js/jquery.isotope.min.js"></script>
+            <script src="../../js/jquery.magnific-popup.min.js"></script>
+            <script src="../../js/animate.js"></script>
+            <script src="../../js/custom.js"></script>
+            <script src="../../js/owl-carousel/owl.carousel.js"></script>
+            <script src="../../js/ctrl1.js"></script>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap" async defer></script>
+
+
+
+        </body>
+
+        </html>
     <?php
         }
-    }
+        public static function fichierCss()
+        { ?>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/all.min.css" rel="stylesheet">
+        <link href="../../css/styles.css" l="stylesheet" />
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../../css/fancybox/jquery.fancybox.css" rel="stylesheet">
+        <link href="../../css/jcarousel.css" rel="stylesheet" />
+        <link href="../../css/flexslider.css" rel="stylesheet" />
+        <link href="../../js/owl-carousel/owl.carousel.css" rel="stylesheet">
+        <link href="../../css/style.css" rel="stylesheet" />
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+        </body>
+
+        </html>
+<?php
+        }
+    } ?>
