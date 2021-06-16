@@ -31,8 +31,6 @@ class ViewTemplate
                     <div class="container ">
                         <div class="row">
                             <div class="col-md-12">
-
-
                                 <a class="navbar-brand" href="index.html"><img src="../../images/logo1.png" alt="logo" /></a>
                                 <h2>
                                     <p class="pull-left hidden-xs centre ">La Clé de votre Univers !</p>
@@ -41,7 +39,7 @@ class ViewTemplate
                         </div>
                     </div>
                 </div>
-                <nav class="navbar navbar-expand-lg navbar-light bg-success mb-4">
+                <nav class="navbar navbar-expand-lg navbar-light bg-secondary mb-4">
                     <header>
                         <div class="navbar navbar-default navbar-static-top">
                             <div class="container">
@@ -74,6 +72,13 @@ class ViewTemplate
                                 <a class="nav-link" href="CreationAnnonce.php">CreationAnnonce<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item active">
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="LesPrixs.php"> Les Prixs
+                                    <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -85,102 +90,82 @@ class ViewTemplate
         {
             ?>
 
-            </div>
-            <footer class="bg-success text-center mt-4 py-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="widget">
-                                <h5 class="widgetheading">Nos Contact</h5>
-                                <address>
-                                    <strong>Bellevue Immobilier </strong>
-                                    <br>
-                                    BELLEVUE IMMOBILIER <br>
-                                </address>
-                                <p>
-                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
-                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
-                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
-                                </p>
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="widget">
+                                    <h5 class="widgetheading">Our Contact</h5>
+                                    <address>
+                                        <strong>Bootstrap company Inc</strong><br>
+                                        JC Main Road, Near Silnile tower<br>
+                                        Pin-21542 NewYork US.
+                                    </address>
+                                    <p>
+                                        <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
+                                        <i class="icon-envelope-alt"></i> email@domainname.com
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="widget">
-                                <h5 class="widgetheading">Nos Contact</h5>
-                                <address>
-                                    <strong>Bellevue Immobilier </strong>
-                                    <br>
-                                    BELLEVUE IMMOBILIER <br>
-                                </address>
-                                <p>
-                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
-                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
-                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
-                                </p>
+                            <div class="col-md-3">
+                                <div class="widget">
+                                    <h5 class="widgetheading">Quick Links</h5>
+                                    <ul class="link-list">
+                                        <li><a href="#">Latest Events</a></li>
+                                        <li><a href="#">Terms and conditions</a></li>
+                                        <li><a href="#">Privacy policy</a></li>
+                                        <li><a href="#">Career</a></li>
+                                        <li><a href="#">Contact us</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="widget">
-                                <h5 class="widgetheading">Nos Contact</h5>
-                                <address>
-                                    <strong>Bellevue Immobilier </strong>
-                                    <br>
-                                    BELLEVUE IMMOBILIER <br>
-                                </address>
-                                <p>
-                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
-                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
-                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
-                                </p>
+                            <div class="col-md-3">
+                                <div class="widget">
+                                    <h5 class="widgetheading">Latest posts</h5>
+                                    <ul class="link-list">
+                                        <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                        <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+                                        <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="widget">
-                                <h5 class="widgetheading">Nos Contact</h5>
-                                <address>
-                                    <strong>Bellevue Immobilier </strong>
-                                    <br>
-                                    BELLEVUE IMMOBILIER <br>
-                                </address>
-                                <p>
-                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
-                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
-                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
-                                </p>
+                            <div class="col-md-3">
+                                <div class="widget">
+                                    <h5 class="widgetheading">Recent News</h5>
+                                    <ul class="link-list">
+                                        <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                        <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+                                        <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="widget">
-                                <h5 class="widgetheading">Nos Contact</h5>
-                                <address>
-                                    <strong>Bellevue Immobilier </strong>
-                                    <br>
-                                    BELLEVUE IMMOBILIER <br>
-                                </address>
-                                <p>
-                                    <i class="icon-phone"></i> 06 16 93 69 81 <br>
-                                    <i class="icon-phone"></i> 09 51 25 76 14 <br>
-                                    <i class="icon-envelope-alt"></i>chantalgesbert@gmail.com
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="col-lg-3">
-                                <ul class="social-network">
-                                    <h5 class="widgetheading">Réseux socio</h5>
-
-                                    <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-square"></i></a></li>
-                                    <li><a href="#" data-placement="top" title="twitter"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" data-placement="top" title="instagram"> <i class="fab fa-instagram-square"></i></a></li>
-                                    <li><a href="#" data-placement="top" title="linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                    <li><a href="#" data-placement="top" title="pinterest"><i class="fab fa-pinterest"></i></a></li>
-
-                                </ul>
-                            </div>
-
                         </div>
                     </div>
-            </footer>
+                    <div id="sub-footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="copyright">
+                                        <p>
+                                            <span>&copy; BELLEVUE IMMOBILIER </span><a href="http://webthemez.com/free-bootstrap-templates/" target="_blank">WebThemez</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <ul class="social-network">
+                                        <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" data-placement="top" title="Twitter"></a><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                        <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
         <?php
         }
         public static function fichierJS()

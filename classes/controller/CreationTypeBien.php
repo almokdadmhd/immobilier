@@ -8,24 +8,19 @@
     require_once "../model/ModelTypeBien.php";
     require_once "../utils/Utils.php";
 
-   
+
     viewTemplate::fichierCss();
     ViewTemplate::menu();
-    if (isset($_POST["ajout"])) {
+    if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
+        viewTemplate::alert("Les données sont insérées avec succès", "success", "ListeTypeBien.php");
 
-        if ($_POST["libelle"]) {
-            ModelTypeBien::ajoutTypeBien($_POST["libelle"]);
-            viewTemplate::alert("Les données sont insérées avec succès", "success", "ListeTypeBien.php");
+        if (isset($_POST["libelle"])) {
         } else {
-            viewTemplate::alert("Les données ne sont pas insérées ", "danger", "CreationConnexion.php");
+            viewTypeBien::ajoutTypeBien();
         }
     } else {
-        viewTypeBien::ajoutTypeBien();
+        header("CreationConnexion.php");
     }
-
     ViewTemplate::footer();
     viewTemplate::fichierJS();
-
-
-
     ?>
