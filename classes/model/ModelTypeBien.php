@@ -31,20 +31,21 @@ class ModelTypeBien
         return $requete->fetch();
     }
 
-    public static function ModifTypeBien($id, $type_bien)
+    public static function ModifTypeBien($id, $leibelle)
     {
         $idcon = connexion();
-        $requete = $idcon->prepare("UPDATE type_bien SET type_bien=:type_bien WHERE id = :id");
+        $requete = $idcon->prepare("UPDATE libelle SET leibelle=:leibelle WHERE id = :id");
         $requete->execute([
             ':id' => $id, 
-            ':type_bien' => $type_bien
+            ':leibelle' => $leibelle
         ]);
     }
 
     public static function SuppressionTypeBien($id)
     {
         $idcon = connexion();
-        $requete = $idcon->prepare("DELETE FROM type_bien WHERE id  = :id");
-        $requete->execute([":id" => $id]);
+        $requete = $idcon->prepare("DELETE FROM libelle WHERE id  = :id");
+        $requete->execute
+        ([":id" => $id]);
     }
 }

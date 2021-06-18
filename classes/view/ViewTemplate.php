@@ -165,7 +165,6 @@ class ViewTemplate
                     </div>
                 </footer>
             </div>
-            <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
         <?php
         }
         public static function fichierJS()
@@ -197,6 +196,7 @@ class ViewTemplate
 
 
 
+
         </body>
 
         </html>
@@ -215,6 +215,9 @@ class ViewTemplate
         <link href="../../css/style.css" rel="stylesheet" />
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+
+
 
 
         </body>

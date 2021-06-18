@@ -90,12 +90,11 @@ class ViewTypeBien
         }
         public static function listeTypeBien()
         {
-            $listeTypeBien = ModelTypeBien::listeTypeBien()
+            $listeTypeBien = ModelTypeBien::listeTypeBien();
             ?>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#ID User</th>
                             <th scope="col">libelle</th>
                             <th scope="col">Actions</th>
                         </tr>
@@ -106,21 +105,22 @@ class ViewTypeBien
                         ?>
                             <tr>
                                 <td><?php echo $bien['libelle'] ?></td>
-                                <td><?php echo $bien['libelle'] ?></td>
                                 <td>
+                                <button type="button" class="btn btn-success">Modifier type bien</button>
+                                <button type="button" class="btn btn-danger">Suppression type bien</button>
                                 </td>
                             </tr>
-
                         <?php
                         }
                         ?>
                     </tbody>
                 </table>
+
             <?php
         }
-        public static function modifTypeBien($id)
+        /*public static function modifTypeBien($id)
         {
-            $typesBien = ModelTypeBien::ajoutTypeBien();
+            $typesBien = ModelTypeBien::ajoutTypeBien($_libelle);
             $selectedType = ModelTypeBien::ajoutTypeBien();
             ?>
                 <div class="container">
@@ -128,10 +128,10 @@ class ViewTypeBien
                         <input type="hidden" name="id" name="id" value="<?php echo $id; ?>" />
                         <select name="type_ref_id" class="form-control" required>
                             <?php
-                            foreach ($typesBien as $typesBien) {
+                            foreach ($typesBien as $typeBien) {
                             ?>
-                                <option value="<?php echo $typesBien['id'] ?>" <?php echo $typesBien['id'] == $selectedType['type_ref_id'] ? "selected" : "" ?>>
-                                    <?php echo $typesBien['type_ref'] . " - " . $typesBien['support'] ?>
+                                <option value="<?php echo $typeBien['id'] ?>" <?php echo $typeBien['id'] == $selectedType['type_ref_id'] ? "selected" : "" ?>>
+                                    <?php echo $typeBien['type_ref'] . " - " . $typeBien['support'] ?>
                                 </option>
                             <?php
                             }
@@ -148,5 +148,5 @@ class ViewTypeBien
                     </form>
                 </div>
         <?php
-        }
+        }*/
     }

@@ -15,7 +15,7 @@
                 $_SESSION["id"] = $user->getId();
                 $_SESSION["role"] = $user->getRole();
                 $_SESSION["nom"] = $user->getPrenom() . " " . $user->getNom();
-                header('Location: Accueil.php');
+                ViewTemplate::alert(" vous douvez aller à la page d'accueil ", " success  ", "Accueil.php");
                 exit();
             } else {
                 ViewTemplate::alert(" Mot de passe erronée ", " danger  ", "CreationConnexion.php");

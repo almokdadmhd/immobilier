@@ -6,13 +6,15 @@
     require_once "../view/ViewTypeBien.php";
     require_once "../utils/Utils.php";
     require_once "../view/VoirTypeBien.php";
+    require_once "../controller/ModifTypeBien.php";
+
+    
 
     
 
     ViewTemplate::fichierCss();
     ViewTemplate::menu();
     ViewTypeBien::listeTypeBien();
-    FormBien::formTypebien();
     ViewTemplate::footer();
     ViewTemplate::fichierJS();
 
