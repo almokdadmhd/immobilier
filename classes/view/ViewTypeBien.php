@@ -1,5 +1,9 @@
 <?php
 require_once "../model/ModelTypeBien.php";
+require_once "../view/ViewTypeBien.php";
+
+
+
 class ViewTypeBien
 {
     public static function ajoutTypeBien()
@@ -90,63 +94,53 @@ class ViewTypeBien
         }
         public static function listeTypeBien()
         {
-            $listeTypeBien = ModelTypeBien::listeTypeBien();
+            $typesBien = modelTypeBien::listeTypeBien();
+
             ?>
-                <table class="table">
+                <table class="container">
                     <thead>
                         <tr>
-                            <th scope="col">libelle</th>
-                            <th scope="col">Actions</th>
+                            <th scope="col">id</th>
+                            <th scope="col">type_bien</th>
+                            <th scope="col">Action1</th>
+                            <th scope="col">Action2</th>
+
+
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($listeTypeBien as $bien) {
+                        foreach ($typesBien as $typeBien) {
                         ?>
                             <tr>
-                                <td><?php echo $bien['libelle'] ?></td>
-                                <td>
-                                <button type="button" class="btn btn-success">Modifier type bien</button>
-                                <button type="button" class="btn btn-danger">Suppression type bien</button>
-                                </td>
+                                <th><?php echo $typeBien["id"] ?></th>
+                                <td><?php echo $typeBien["libelle"] ?></td>
+                                <td><a class="btn btn-primary" target="_blank" role="button">Modifier TypeBien</a></td>
+                                <td><a class="btn btn-danger" target="_blank" role="button">Supprimer TypeBien</a></td>
                             </tr>
                         <?php
                         }
                         ?>
                     </tbody>
                 </table>
-
             <?php
         }
-        /*public static function modifTypeBien($id)
+        public static function modifTypeBien($id)
         {
-            $typesBien = ModelTypeBien::ajoutTypeBien($_libelle);
-            $selectedType = ModelTypeBien::ajoutTypeBien();
+            $typeBien = ModelTypeBien::getTypebien($id);
             ?>
                 <div class="container">
-                    <form name="modif_ref" id="modif_ref" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+                    <form name="modif" id="modif" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                         <input type="hidden" name="id" name="id" value="<?php echo $id; ?>" />
-                        <select name="type_ref_id" class="form-control" required>
-                            <?php
-                            foreach ($typesBien as $typeBien) {
-                            ?>
-                                <option value="<?php echo $typeBien['id'] ?>" <?php echo $typeBien['id'] == $selectedType['type_ref_id'] ? "selected" : "" ?>>
-                                    <?php echo $typeBien['type_ref'] . " - " . $typeBien['support'] ?>
-                                </option>
-                            <?php
-                            }
-                            ?>
-                        </select>
                         <div class=" form-group">
-                            <input type="text" name="nom" id="nom" value="<?php echo $selectedType['nom'] ?>" class="form-control" aria-describedby="nom" placeholder="Nom" required>
+                            <input type="text" name="libelle" id="libelle" class="form-control" aria-describedby="techno" placeholder="Libelle" required>
                         </div>
-                        <div class=" form-group">
-                            <input type="text" name="libelle" id="libelle" value="<?php echo $selectedType['libelle'] ?>" class="form-control" aria-describedby="techno" placeholder="Libelle" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary" name="modif">Modifier</button>
-                        <button type="reset" class="btn btn-danger">Annuler</button>
+                        <a class="btn btn-info" href="ModifTypeBien.php?id=<?php echo $typeBien['id'] ?>" role="button">Modif TypeBien</a>
+                        <a class="btn btn-danger" href="SuppressionTypeBien.php?id=<?php echo $typeBien['id'] ?>" role="button">Suppression TypeBien </a>
                     </form>
                 </div>
         <?php
-        }*/
+        }
+        
     }

@@ -21,9 +21,9 @@ class ViewAnnonce
                 <div class="form-group">
                     <input type="numbre" name="surface" id="surface" value="<?php echo $formSubmit ?  $_POST['surface'] : '' ?>" class="form-control" aria-describedby="surface" placeholder="Surface" required>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <input type="file" name="photos" id="photos" accept="image/*" class="form-control" aria-describedby="photos" placeholder="Photos">
-                </div>
+                </div> -->
                 <div class="form-group">
                     <input type="text" name="adresse" id="adresse" value="<?php echo $formSubmit ?  $_POST['adresse'] : '' ?>" class="form-control" aria-describedby="adresse" placeholder="Adresse" required>
                 </div>
@@ -40,22 +40,15 @@ class ViewAnnonce
                     <input type="text" name="type" id="type" value="<?php echo $formSubmit ?  $_POST['type'] : '' ?>" class="form-control" aria-describedby="type" placeholder="Type" required>
                 </div>
 
-                <div class="form-group">
-                    <input type="text" name="type_bien_id" id="type_bien_id" value="<?php echo $formSubmit ?  $_POST['type_bien_id'] : '' ?>" class="form-control" aria-describedby="type_bien_id" placeholder="Type_bien_id" required>
-                </div>
+               
 
                 <button type="submit" name="ajout" class="btn btn-success">Ajouter</button>
                 <button type="reset" name="annuler" class="btn btn-secondary">Annuler</button>
             </form>
         </div>
-        <?php
-        $typesAnnonce= "";
-        foreach ($typesAnnonce as $typesAnnonce) {
-        }
-        ?>
-
-    <?php
-    }
+        <?php 
+        } 
+    
     public static function listeAnnonce()
     {
         $listeAnnonce = ModelAnnonce::listeAnnonce();

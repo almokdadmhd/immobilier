@@ -1,7 +1,5 @@
-<?php session_start() ?>
 
 <?php
-require_once "../view/ViewTypeBien.php";
 require_once "../view/ViewTemplate.php";
 require_once "../model/ModelTypeBien.php";
 require_once "../utils/Utils.php";
@@ -14,7 +12,7 @@ if (isset($_GET['id'])) {
         ModelTypeBien::SuppressionTypeBien($_GET['id']);
         ViewTemplate::alert("Le type bien a été supprimé avec succès.", "success", "ListeTypeBien.php");
     } else {
-        ViewTemplate::alert("Le type social n'existe pas.", "danger", "ListeTypeBien.php");
+        ViewTemplate::alert("Le type bien n'existe pas.", "danger", "ListeTypeBien.php");
     }
 } else {
     ViewTemplate::alert("Aucune donnée n'a été transmise.", "danger", "ListeTypeBien.php");

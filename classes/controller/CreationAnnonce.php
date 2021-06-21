@@ -13,18 +13,15 @@
             $_POST['titre'],
             $_POST['description'],
             $_POST['surface'],
-            $_POST['photos'],
+            // $_POST['photos'],
             $_POST['adresse'],
             $_POST['ville'],
             $_POST['codpost']  ,
             $_POST['prix'] ,
             $_POST['type'],
-            $_POST['type_bien_id']
         ];
         $types = ["id", "titr", "description", "surface", "photos", "adresse", "ville", "codpost", "prix", "type", "type_bien_id"];
-
         $datat = Utils::valider($doonees, $types);
-
         if ($data) {
             $extensions = ["jpg", "jpeg", "png", "gif"];
             $upload = Utils::upload($extensions, $_FILES['fichier']);

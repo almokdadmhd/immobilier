@@ -37,77 +37,77 @@ class Utils
             case "non":
                 $valide = true;
             default:
-                if (preg_match($tabRegex[$type], $str)) {
-                    $valide = true;
-                }
-        }
+    //             if (preg_match($tabRegex[$type], $str)) {
+    //                 $valide = true;
+    //             }
+    //     }
 
-        $valide === true ? $message = "" : $message = "Le champ $type n'est pas au format demandé.<br/>";
+    //     $valide === true ? $message = "" : $message = "Le champ $type n'est pas au format demandé.<br/>";
 
-        $errorsTab = [$str, $message];
-        return $errorsTab;
-    }
+    //     $errorsTab = [$str, $message];
+    //     return $errorsTab;
+    // }
 
-    public static function valider($donnees, $types)
-    {
-        $erreurs = "";
-        $donneesValides = []; // donnee = str apres nettoyage 
-        for ($i = 0; $i < count($donnees); $i++) {
-            $tab = Utils::validation($donnees[$i], $types[$i]);
-            if ($tab[1]) {
-                $erreurs .= $tab[1];
-            }
-            $donneesValides[] = $tab[0];
-        }
-        if ($erreurs) {
-            ViewTemplate::alert($erreurs, "danger", null);
-            return false;
-        }
-        return
-            $donneesValides;
-    }
+    // public static function valider($donnees, $types)
+    // {
+    //     $erreurs = "";
+    //     $donneesValides = []; // donnee = str apres nettoyage 
+    //     for ($i = 0; $i < count($donnees); $i++) {
+    //         $tab = Utils::validation($donnees[$i], $types[$i]);
+    //         if ($tab[1]) {
+    //             $erreurs .= $tab[1];
+    //         }
+    //         $donneesValides[] = $tab[0];
+    //     }
+    //     if ($erreurs) {
+    //         ViewTemplate::alert($erreurs, "danger", null);
+    //         return false;
+    //     }
+    //     return
+    //         $donneesValides;
+    // }
 
-    public static function upload($extensions, $fichier)
-    {
-        // ctrl de nom ==> regex (pas de caract speciaux)
-        // ctrl sur les extensions autorisees
-        // ne pas ecraser un fichier existant
-        // ctrl de taille
+    // public static function upload($extensions, $fichier)
+    // {
+    //     // ctrl de nom ==> regex (pas de caract speciaux)
+    //     // ctrl sur les extensions autorisees
+    //     // ne pas ecraser un fichier existant
+    //     // ctrl de taille
 
-        $file_name = $fichier['name'];
-        $file_size = $fichier['size'];
-        $file_tmp = $fichier['tmp_name'];
-        $file_ext = strtolower(pathinfo($fichier['name'], PATHINFO_EXTENSION));
-        $uploadOk = false;
-        $errors = "";
+    //     $file_name = $fichier['name'];
+    //     $file_size = $fichier['size'];
+    //     $file_tmp = $fichier['tmp_name'];
+    //     $file_ext = strtolower(pathinfo($fichier['name'], PATHINFO_EXTENSION));
+    //     $uploadOk = false;
+    //     $errors = "";
 
-        $pattern = "/^[\w\s\-\.]{4,}$/";
-        if (!preg_match($pattern, $file_name)) {
-            $errors .= "Nom de fichier non valide. <br/>";
-        }
+    //     $pattern = "/^[\w\s\-\.]{4,}$/";
+    //     if (!preg_match($pattern, $file_name)) {
+    //         $errors .= "Nom de fichier non valide. <br/>";
+    //     }
 
-        if (!in_array(strtolower($file_ext), $extensions)) {
-            $errors .= "extension non autorisée. <br/>";
-        }
+    //     if (!in_array(strtolower($file_ext), $extensions)) {
+    //         $errors .= "extension non autorisée. <br/>";
+    //     }
 
-        if ($file_size > 3000000) {
-            $errors .= "taille du fichier ne doit pas dépasser 3 Mo. <br/>";
-        }
+    //     if ($file_size > 3000000) {
+    //         $errors .= "taille du fichier ne doit pas dépasser 3 Mo. <br/>";
+    //     }
 
-        $file_name = substr(md5( $fichier['name']), 10) . ".$file_ext";
+    //     $file_name = substr(md5( $fichier['name']), 10) . ".$file_ext";
 
-        while (file_exists(ROOT_DIR."/photos/$file_name")) {
-            $file_name = substr(md5( $file_name), 10) . ".$file_ext";
-        }
+    //     while (file_exists(ROOT_DIR."/photos/$file_name")) {
+    //         $file_name = substr(md5( $file_name), 10) . ".$file_ext";
+    //     }
 
-        if ($errors === "") {
-            if (move_uploaded_file($file_tmp, ROOT_DIR."/photos/" . $file_name)) {
-                $uploadOk = true;
-                return ["uploadOk" => $uploadOk, "file_name" => $file_name, "errors" => $errors];
-            } else {
-                $errors .= "Echec de l'upload. <br/>";
-            }
-        }
+    //     // if ($errors === "") {
+    //     //     if (move_uploaded_file($file_tmp, ROOT_DIR."/photos/" . $file_name)) {
+    //     //         $uploadOk = true;
+    //     //         return ["uploadOk" => $uploadOk, "file_name" => $file_name, "errors" => $errors];
+    //     //     } else {
+    //     //         $errors .= "Echec de l'upload. <br/>";
+    //     //     }
+     }
     }
     public static function verification($mdp1, $mdp2)
     {
